@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about GamezPlanet - Your trusted source for gaming news and reviews.">
+    <title>About - GamezPlanet</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(124, 58, 237, 0.3);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 0.5rem;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #e0e0e0;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-section {
+            padding-top: 8rem;
+            min-height: 100vh;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content h3 {
+            font-size: 2rem;
+            margin: 2rem 0 1rem;
+            color: #ffffff;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 14, 39, 0.95);
+            padding: 3rem 5% 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(124, 58, 237, 0.3);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .copyright {
+            color: #808080;
+            font-size: 0.9rem;
+            text-align: center;
+            padding-bottom: 1rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                max-width: 320px;
+                height: 100vh;
+                background: rgba(10, 14, 39, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 5rem 2rem 2rem;
+                transition: right 0.4s ease;
+                border-left: 2px solid rgba(124, 58, 237, 0.5);
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+                gap: 0;
+                overflow-y: auto;
+                align-items: flex-start;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav a {
+                padding: 1.2rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                font-size: 1rem;
+                width: 100%;
+                text-align: left;
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-links a {
+                display: block;
+                padding: 0.5rem 0;
+            }
+
+            section {
+                padding: 3rem 5%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            nav {
+                width: 85%;
+            }
+
+            section {
+                padding: 2.5rem 4%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">GamezPlanet</div>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </nav>
+    </header>
+
+    <section class="page-section">
+        <div class="section-header">
+            <h1>About GamezPlanet</h1>
+        </div>
+        <div class="about-content">
+            <p>GamePlanet is a dedicated go-to gaming and chill hub, where competition meets comfort and every session feels legendary. We are established to serve the global gaming community with integrity and passion.<br><br>
+                Whether you’re:<br>
+                Grinding FIFA matches ⚽<br>
+                Locking in on Call of Duty 🔫<br>
+                Making strategic moves in Chess ♟️<br>
+                Clearing shots at Snooker 🎱<br><br>
+                GamePlanet gives you premium gameplay, lounge vibes, and cold drinks to keep the energy flowing.</p>
+
+            <h3>What We Offer</h3><br>
+            <p>🎮 Console & indoor games (FIFA, COD, Chess, Snooker & more)<br>
+                🛋️ A relaxed gaming lounge atmosphere<br>
+                🥤 Refreshments & drinks<br>
+                🏆 Friendly matches, challenges & tournaments<br>
+                🤝 A safe space for gamers to connect, compete, and chill</p>
+            
+            <h3>Our Mission</h3>
+            <p>To create a fun, competitive, and welcoming gaming community where players of all skill levels feel at home.<br><br><br>
+                Game harder. Chill smarter. Welcome to GamePlanet.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+        <div class="copyright">
+            &copy; 2026 GamezPlanet. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            nav.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        // Close menu when clicking a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
